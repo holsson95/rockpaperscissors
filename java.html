@@ -6,32 +6,79 @@
       </head>
       <body>
           <script>
-          function computerPlay(){    
-            let x = Math.random();
-            let random = Math.floor(x*(3))+1;
-            console.log(random);
-            if (random === 1){
             
-                console.log("Rock");
+            let pSelection= window.prompt("rock, paper, or scissors?");
+            
+            let playerSelection= pSelection.toLowerCase();
+            alert("you chose "+playerSelection);
+
+            console.log("player chose "+playerSelection);
+            
+            let x = Math.random();
+            let computerSelection = Math.floor(x*(3))+1;
+
+
+            function computerPlay(){    
+                
+                console.log(computerSelection);
+                if (computerSelection === 1){
+                    
+                    console.log("Computer chose Rock");
+                }
+                else if(computerSelection===2){
+                    
+                    console.log("Computer chose Paper");    
+                 }
+                else if (computerSelection===3){
+                    
+                console.log("Computer chose Scissors");    
+                 }
+                }  
+                
+                computerPlay();
+       
+            
+            function playRound(){
+
+                if ((playerSelection=="rock" && computerSelection==3)||
+                (playerSelection=="scissors" && computerSelection==2)||
+                (playerSelection=="paper" && computerSelection==1))
+                {
+                    console.log("you win");
+                }
+                else if ((playerSelection=="rock" && computerSelection==1)||
+                (playerSelection=="scissors" && computerSelection==3)||
+                (playerSelection=="paper" && computerSelection==2))
+                {
+                    console.log("you tie");
+                }
+                else {
+                    console.log("you lose");
+                    } 
+                    
+                }
+        
+               
+
+                playRound();
+            
+
+               
+
+        
+
     
-            }
-            else if(random===2){
-                console.log("Paper");
-                
-            }
-            else if (random===3){
-                console.log("Scissors");
-                
-            }
-        }
-        computerPlay();
-        
-        
-              
-
-
-              
           </script>
+          
+        <div>
+          <button id="rock">rock</button>
+          <button id="paper">paper</button>
+          <button id="scissors">scissors</button>
+        </div>
+         
+          
+
+
       </body>
 
 </html>
