@@ -1,26 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Page Title</title>
-        <meta charset="UTF-8"/>
-      </head>
-      <body>
-          
-          
-        <div class = optionBtn>
-          <button  id="rock">rock</button>
-          <button  id="paper">paper</button>
-          <button  id="scissors">scissors</button>
-        </div>
-
-        <div class = scores>
-            <div id=playerScore></div>
-            <div id=computerScore></div>
-        </div>
-         
-        <script>
-              
-            const optionBtn = document.querySelectorAll("div.optionBtn button");
+const optionBtn = document.querySelectorAll("div.optionBtn button");
             const playerPoints = document.querySelector('#playerScore');
             const computerPoints = document.querySelector('#computerScore');
             const rock = document.querySelector('#rock');
@@ -83,14 +61,3 @@
                   } 
                   
               }
-             
-
-      
-
-  
-        </script>
-
-
-      </body>
-
-</html>
