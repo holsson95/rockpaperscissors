@@ -4,6 +4,7 @@ const optionBtn = document.querySelectorAll("div.optionBtn button");
             const rock = document.querySelector('#rock');
             const paper = document.querySelector('#paper');
             const scissors = document.querySelector('#scissors');
+            const winner = document.querySelector('#winner');
           
             let playerScore = 0;
             let computerScore = 0;  
@@ -30,7 +31,10 @@ const optionBtn = document.querySelectorAll("div.optionBtn button");
               optionBtn.forEach(button => {
                   button.addEventListener('click', getPlayerChoice)
                   ;})
-                  ;}
+                  
+                  }
+
+            
                   
           function getPlayerChoice(e) {
               playerSelection = (e.target.id);
@@ -39,25 +43,49 @@ const optionBtn = document.querySelectorAll("div.optionBtn button");
           }
 
           //begin game
+          startGame();
+          
+          
+          
+          
+         
 
-          startGame(); //gets player choice from button
+           
      
           function playRound(playerSelection,computerSelection){
-
+            //play rounds and collect scores 
               if ((playerSelection==="rock" && computerSelection==3)||
               (playerSelection==="scissors" && computerSelection==2)||
               (playerSelection==="paper" && computerSelection==1))
               {
                   console.log("you win");
+                  playerScore++;
+                  playerPoints.textContent = playerScore;
+                  computerPoints.textContent = computerScore;
               }
               else if ((playerSelection==="rock" && computerSelection==1)||
               (playerSelection==="scissors" && computerSelection==3)||
               (playerSelection==="paper" && computerSelection==2))
               {
                   console.log("you tie");
-              }
-              else {
-                  console.log("you lose");
-                  } 
+                  playerPoints.textContent = playerScore;
+                  computerPoints.textContent = computerScore;
                   
               }
+              else {
+                  console.log("you lose");    
+                  computerScore++;
+                  playerPoints.textContent = playerScore;
+                  computerPoints.textContent = computerScore;
+                  } 
+                console.log("player score is "+playerScore,"computer score is "+computerScore); 
+            //Announce winner 
+                if (playerScore >= 5 && computerScore < 5){
+                    winner.textContent="You win!"
+                }
+                else if (computerScore >= 5 && playerScore<5){
+                    winner.textContent="You lose!"
+                }       
+              }
+
+              
